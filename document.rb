@@ -1,22 +1,36 @@
+# frozen_string_literal: true
+
+# Class: Document
+# attributes:
+#  - name: String
+#  - rows: Array[Row]
+# @example
+#  doc = Document.new(name: 'teste.txt', rows: [Row.new(title: 'Aprender', content: 'Ruby on Rails' )])
 class Document
-  attr_accessor :name, :rows, :errors
+  attr_reader :name, :rows
+  attr_accessor :errors
 
   # @param [String] name
   # @param [Array<Row>] rows
   def initialize(name:, rows:)
-    @errors = []
+    self.errors = []
     self.name = name
-    self.rows = rows || []
+    self.rows = rows
   end
 
   # @param [String] name
   def name=(name)
-    raise FileNotFound, "Arquivo precisa existir !" unless File.exist?(name)
+    raise FileNotFound, 'Arquivo precisa existir !' unless File.exist?(name)
+
     @name = name
   rescue FileNotFound => e
     puts "#{e.class}: #{e.message}"
-    self.errors << { name: e.message }
+    errors << { name: e.message }
     @name = nil
+  end
+
+  def rows=(rows)
+    @rows = rows || []
   end
 
   def save!
@@ -29,7 +43,7 @@ class Document
       end
     end
 
-    puts "Arquivo salvo !"
+    puts 'Arquivo salvo !'
     puts "Linhas inseridas: #{`wc -l #{name}`.split.first.to_i}"
   end
 
