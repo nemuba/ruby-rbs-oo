@@ -4,8 +4,10 @@
 # attributes:
 #  - name: String
 #  - rows: Array[Row]
-# @example
+# example:
 #  doc = Document.new(name: 'teste.txt', rows: [Row.new(title: 'Aprender', content: 'Ruby on Rails' )])
+#  doc.save!
+#  puts doc.read
 class Document
   attr_reader :name, :rows
   attr_accessor :errors

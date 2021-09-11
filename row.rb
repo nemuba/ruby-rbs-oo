@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 # Class: Row
-# @example
+# attributes:
+# - title: String
+# - content: String
+# example:
 # row = Row.new(title: 'Aprender', content: 'Aprender Ruby')
 class Row
   attr_reader :title, :content
