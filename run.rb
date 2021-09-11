@@ -1,12 +1,12 @@
-require_relative 'document.rb'
-require_relative 'row.rb'
+require_relative 'document'
+require_relative 'row'
 
 rows = []
 
-puts "Informe o titulo: "
+puts 'Informe o titulo: '
 title = gets.chomp.to_s
 
-puts "Informe o titulo: "
+puts 'Informe o conteúdo: '
 content = gets.chomp.to_s
 
 rows << Row.new(title: title, content: content)
@@ -14,7 +14,5 @@ rows << Row.new(title: title, content: content)
 document = Document.new(name: 'teste.txt', rows: rows)
 
 document.save!
-
-sleep 2
 
 puts document.read
