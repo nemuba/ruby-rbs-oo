@@ -1,19 +1,20 @@
 require_relative 'document.rb'
 require_relative 'row.rb'
 
-rows = [
-  Row.new(title: "Aprender", content: "Ruby on Rails"),
-  Row.new(title: "Aprender", content: "Hotwire Rails"),
-  Row.new(title: "Aprender", content: "Sidekiq"),
-  Row.new(title: "Aprender", content: "Sinatra"),
-  Row.new(title: "Aprender", content: "React JS"),
-]
+rows = []
 
-document = Document.new(name: "teste.txt", rows: rows)
-return  unless document.errors.empty?
+puts "Informe o titulo: "
+title = gets.chomp.to_s
+
+puts "Informe o titulo: "
+content = gets.chomp.to_s
+
+rows << Row.new(title: title, content: content)
+
+document = Document.new(name: 'teste.txt', rows: rows)
 
 document.save!
 
-puts "Documento: #{document.name}"
-puts document.read
+sleep 2
 
+puts document.read

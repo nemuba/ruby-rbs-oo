@@ -1,13 +1,15 @@
-
 class Document
   attr_accessor :name, :rows, :errors
 
-  def initialize(name:, rows: )
+  # @param [String] name
+  # @param [Array<Row>] rows
+  def initialize(name:, rows:)
     @errors = []
     self.name = name
     self.rows = rows || []
   end
 
+  # @param [String] name
   def name=(name)
     raise FileNotFound, "Arquivo precisa existir !" unless File.exist?(name)
     @name = name
@@ -18,7 +20,7 @@ class Document
   end
 
   def save!
-    File.open(name,'wb+') do |file|
+    File.open(name, 'wb+') do |file|
       file.write "title | content \n"
       rows.each do |row|
         next unless row.errors.empty?

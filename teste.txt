@@ -1,6 +1,2 @@
 title | content 
 Aprender | Ruby on Rails
-Aprender | Hotwire Rails
-Aprender | Sidekiq
-Aprender | Sinatra
-Aprender | React JS

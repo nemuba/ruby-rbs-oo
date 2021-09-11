@@ -1,0 +1,19 @@
+class Row
+  attr_accessor title: String
+
+  attr_accessor content: String
+
+  attr_accessor errors: Array
+
+  def initialize: (title: String, content: String) -> void
+
+  def title=: (String title) -> void
+
+  def content=: (String content) -> void
+
+  class TitleMaxSizeError < StandardError
+  end
+
+  class ContentMaxSizeError < StandardError
+  end
+end

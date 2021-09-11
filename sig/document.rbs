@@ -1,0 +1,18 @@
+class Document
+  attr_accessor name: String
+
+  attr_accessor rows: Array[Row]
+
+  attr_accessor errors: Array
+
+  def initialize: (name: String, rows: Array[Row]) -> void
+
+  def name=: (String name) -> void
+
+  def save!: () -> void
+
+  def read: () -> Array[String]
+
+  class FileNotFound < StandardError
+  end
+end

@@ -1,12 +1,15 @@
 class Row
   attr_accessor :title, :content, :errors
 
-  def initialize(title: , content:)
+  # @param [String] title
+  # @param [String] content
+  def initialize(title:, content:)
     self.errors = []
     self.title = title
-    self.content =content
+    self.content = content
   end
 
+  # @param [String] title
   def title=(title)
     raise TitleMaxSizeError, "Titulo muito grande, máximo de 30 caractes !" unless title.size <= 30
     @title = title
@@ -16,6 +19,7 @@ class Row
     @title = nil
   end
 
+  # @param [String] content
   def content=(content)
     raise ContentMaxSizeError, "Conteúdo muito grande, máximo de 150 carcateres !" unless content.size <= 150
     @content = content
@@ -26,5 +30,6 @@ class Row
   end
 
   class TitleMaxSizeError < StandardError; end
+
   class ContentMaxSizeError < StandardError; end
 end

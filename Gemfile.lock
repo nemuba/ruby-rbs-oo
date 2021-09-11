@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rbs (1.6.2)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  rbs
+
+BUNDLED WITH
+   2.2.22
