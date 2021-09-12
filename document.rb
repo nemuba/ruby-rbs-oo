@@ -37,11 +37,15 @@ class Document
 
   def save!
     File.open(name, 'wb+') do |file|
-      file.write "title | content \n"
+      file.write "Frases\n\n"
       rows.each do |row|
         next unless row.errors.empty?
 
-        file.write "#{row.title} | #{row.content}\n"
+        file.write "categoria: #{row.title}\n\n"
+        row.content.each do |frase|
+          file.write "frase: #{frase[:content]}\n"
+          file.write "autor: #{frase[:author]}\n\n"
+        end
       end
     end
 

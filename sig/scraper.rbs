@@ -1,0 +1,17 @@
+class Scraper
+  attr_reader url: String
+  attr_reader html: String
+  attr_reader parse: String
+  attr_reader category: String
+  attr_reader categories: Array[String]
+  attr_reader frases: Array[Hash]
+
+  def initialize: (url: String) -> void
+
+  private
+
+  def reload!: () -> void
+  def scraper: (url: String) -> void
+  def list_categories: () -> Array[String]
+  def list_frases: () -> Array[Hash]
+end

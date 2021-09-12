@@ -1,11 +1,11 @@
 class Row
   attr_accessor title: String
 
-  attr_accessor content: String
+  attr_accessor content: Array[Hash]
 
   attr_accessor errors: Array
 
-  def initialize: (title: String, content: String) -> void
+  def initialize: (title: String, content: Array[Hash]) -> void
 
   def title=: (String title) -> void
 

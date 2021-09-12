@@ -1,20 +1,17 @@
-# frozen_string_literal: true
-
-require_relative 'document'
+require_relative 'scraper'
 require_relative 'row'
+require_relative 'document'
+
+data = Scraper.new('https://www.pensador.com/frases/')
 
 rows = []
 
-puts 'Informe o titulo: '
-title = gets.chomp.to_s
+data.categories.each do |category|
+  data.random(category: category)
+  sleep 1
+  rows << Row.new(title: data.category, content: data.frases)
+end
 
-puts 'Informe o conteúdo: '
-content = gets.chomp.to_s
+Document.new(name: 'teste.txt', rows: rows).save!
 
-rows << Row.new(title: title, content: content)
 
-document = Document.new(name: 'teste.txt', rows: rows)
-
-document.save!
-
-puts document.read

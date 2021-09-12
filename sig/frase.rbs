@@ -1,0 +1,10 @@
+class Frase
+  attr_accessor category: String
+  attr_accessor content: String
+  attr_accessor author: String
+
+  def initialize: (category: String, content: String, author: String) -> void
+
+  def to_s -> Hash
+end
+
