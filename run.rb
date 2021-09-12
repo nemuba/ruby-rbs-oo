@@ -13,5 +13,3 @@ data.categories.each do |category|
 end
 
 Document.new(name: 'teste.txt', rows: rows).save!
-
-

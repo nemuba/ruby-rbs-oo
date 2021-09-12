@@ -9,7 +9,7 @@ class Row
 
   def title=: (String title) -> void
 
-  def content=: (String content) -> void
+  def content=: (Array[Hash] content) -> void
 
   class TitleMaxSizeError < StandardError
   end

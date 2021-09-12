@@ -5,6 +5,6 @@ class Frase
 
   def initialize: (category: String, content: String, author: String) -> void
 
-  def to_s -> Hash
+  def to_s: () -> Hash
 end
 

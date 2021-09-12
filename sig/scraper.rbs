@@ -7,10 +7,10 @@ class Scraper
   attr_reader frases: Array[Hash]
 
   def initialize: (url: String) -> void
+  def reload!: () -> void
+  def random: (?category: String, ?count: Integer) -> void
 
   private
-
-  def reload!: () -> void
   def scraper: (url: String) -> void
   def list_categories: () -> Array[String]
   def list_frases: () -> Array[Hash]

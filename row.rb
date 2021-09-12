@@ -11,7 +11,7 @@ class Row
   attr_accessor :errors
 
   # @param [String] title
-  # @param [String] content
+  # @param [Array<Hash>] content
   def initialize(title:, content:)
     self.errors = []
     self.title = title
